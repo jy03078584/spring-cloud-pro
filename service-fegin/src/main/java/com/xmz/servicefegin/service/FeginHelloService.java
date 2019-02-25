@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @date: 2019-02-22
  **/
-@FeignClient(value = "service-hi") // 服务名:service-hi
+@FeignClient(value = "service-hi", fallback = FeginHelloServiceImpl.class) // 服务名:service-hi
 public interface FeginHelloService {
 
 	@GetMapping("/hi")
